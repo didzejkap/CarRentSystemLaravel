@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('redirects','App\Http\Controllers\HomeController@index');
 
-Route::post('insert-data','\App\Http\Controllers\Api\FrontendController@insert');
+//Route::get('/insert-data', 'FrontendController@create');
+//Route::get('home','FrontendController@index');
+Route::post('/wyslijauto','App\Http\Controllers\FrontendController@insertcar');
+//Route::post('wyslijauto', [FrontendController::class, 'insertcar']);
+
+
 
