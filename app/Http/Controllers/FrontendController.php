@@ -19,7 +19,7 @@ class FrontendController extends Controller
         $cars->moc = $request->input('moc');
         $cars->rok = $request->input('rok');
         $cars->save();
-        return redirect('admin.admin');
+        return redirect('/');
         
 
        /* $marka = $request->input('marka');

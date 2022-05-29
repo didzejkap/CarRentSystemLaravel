@@ -12,7 +12,7 @@
 </div>
 <div class="container">
     <p class="text-center fs-2">Dodaj Samochód</p>
-    <form action="wyslijauto" method="post">
+    <form action="{{ url('wyslijauto') }}" method="post">
         {{ csrf_field() }}
         <div class="row justify-content-center gap-3">
             <div class="col-md-5">
