@@ -60,7 +60,7 @@
     </div>
 
     <div class="samochody-div">
-        <div class="napis-samochody">Nasza flota:</div>
+        <div class="napis-samochody">Przykładowe Samochody</div>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-12 border">
                 <!-- Start Single Feature -->
@@ -105,6 +105,10 @@
     </div>
     </div>
     </div>
+
+    <div class="stopka">
+    Projekt Zaliczeniowy Kacper Niedbał
+  </div>
 
 </body>
 

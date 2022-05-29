@@ -18,8 +18,10 @@ class FrontendController extends Controller
         $cars->paliwo = $request->input('paliwo');
         $cars->moc = $request->input('moc');
         $cars->rok = $request->input('rok');
+        $cars->cena = $request->input('cena');
+
         $cars->save();
-        return redirect('/');
+        return redirect('home');
         
 
        /* $marka = $request->input('marka');

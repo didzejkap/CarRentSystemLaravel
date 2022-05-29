@@ -16,6 +16,7 @@ class Car extends Model
         'model',
         'paliwo',
         'moc',
-        'rok'
+        'rok',
+        'cena'
     ];
 }

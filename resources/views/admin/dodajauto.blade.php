@@ -40,6 +40,10 @@
                 <input type="text" class="form-control" name="rok">
             </div>
             <div class="col-md-5">
+                <label for="Rok">Cena</label>
+                <input type="text" class="form-control" name="cena">
+            </div>
+            <div class="col-md-5">
                 <button type="submit" class="btn btn-primary">Wyslij</button>
             </div>
     </form>
