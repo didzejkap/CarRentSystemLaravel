@@ -1,0 +1,156 @@
+
+body{
+    padding-top: 70px;
+}
+.zawartosc{
+    color: white;
+    text-align: center;
+    height:65%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+.zawartosc2{
+    color: white;
+    text-align: center;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.bg{
+background: url(../img/back2.png);
+background-size: cover;
+background-repeat: no-repeat;
+height: 900px;
+}
+.przycisk1{
+    align-items:center ;
+}
+.samochody-div{
+background-color: #1d2336;
+height: auto;
+color: white;
+}
+.h3{
+    color: white;
+}
+.stopka{
+background-color: #4f4f4f;
+height: 80px;
+text-align: center;
+font-size: 30px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.samochod-element{
+    background: url(../img/temp.png);
+    background-repeat: no-repeat;
+    width: 360px;
+    height: 600px;
+    margin-left: 40px;
+    position:relative;
+  
+}
+.napis-samochody{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+.marka{
+    color: white;
+    text-align: center;
+    height: 110px;
+}
+.cena{
+    color:aqua;
+    text-align: center;
+    margin-top: 300px;
+}
+
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars,
+.navbar-scroll .navar-brand {
+  color: #4f4f4f;
+}
+
+.navbar-scroll .nav-link:hover {
+  color: #1266f1;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars,
+.navbar-scrolled .navar-brand {
+  color: #4f4f4f;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #fff;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+body {
+  background-color: #eee;
+ 
+}
+.login {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+.login h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color:rgb(0, 127, 185);
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+
