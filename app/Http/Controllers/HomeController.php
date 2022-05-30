@@ -44,4 +44,8 @@ class HomeController extends Controller
     {
         return view('admin.dodajauto');
     }
+    public function menuusunsamochod()
+    {
+        return view('admin.usunauto');
+    }
 }

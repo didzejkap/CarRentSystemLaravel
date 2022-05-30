@@ -23,13 +23,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('redirects','App\Http\Controllers\HomeController@index');
+
+
+
 Route::get('dodajsamochod','App\Http\Controllers\HomeController@menudodajsamochod');
-
-
-
-
 Route::post('/wyslijauto','App\Http\Controllers\FrontendController@insertcar');
 
-
+Route::get('usunsamochod','App\Http\Controllers\HomeController@menuusunsamochod');
+Route::post('/usunauto','App\Http\Controllers\FrontendController@dropcar');
 
 

@@ -14,9 +14,50 @@
     <p class="text-center fs-2">Menu</p>
         {{ csrf_field() }}
         <div class="col-md-12 text-center">
-        <form action="{{ url('dodajsamochod') }}" method="get">
+
+
+        <div class="row justify-content-center gap-3">
+
+            
+
+            <div class="col-md-5">
+            <form action="{{ url('dodajsamochod') }}" method="get">
         <button type="submit" class="btn btn-primary">Dodaj Samochod</button>
+        </form>
+            </div>
+
+            <div class="col-md-5">
+            <form action="{{ url('dodajsamochod') }}" method="get">
+        <button type="submit" class="btn btn-primary">2</button>
+        </form>
+            </div>
+
+            <div class="col-md-5">
+            <form action="{{ url('usunsamochod') }}" method="get">
+        <button type="submit" class="btn btn-primary">Usun Samochod</button>
+        </form>
+            </div>
+
+            <div class="col-md-5">
+            <form action="{{ url('dodajsamochod') }}" method="get">
+        <button type="submit" class="btn btn-primary">4</button>
+        </form>
+            </div>
+            <div class="col-md-5">
+            <form action="{{ url('dodajsamochod') }}" method="get">
+        <button type="submit" class="btn btn-primary">Wyswietl samochody</button>
+        </form>
+            </div>
+            <div class="col-md-5">
+            <form action="{{ url('dodajsamochod') }}" method="get">
+        <button type="submit" class="btn btn-primary">6</button>
+        </form>
+            </div>
+
+
+
         </div>
+
         </div>
 </div>
 

@@ -22,7 +22,30 @@ class FrontendController extends Controller
 
         $cars->save();
         return redirect('home');
-        
+    }
+    public function dropcar()
+    {
+       
+       /* $cars = DB::table('cars')->get();
+ 
+        return view('admin.usunauto', compact('cars'));
+        */
+
+
+        /*$data = Car::all();
+        return view('admin.usunauto',['cars'=>$data]);
+
+        $data = 'this is a test';
+        return view('AdminPanel', compact(['data']));
+        */
+
+        //$data = 'this is a test';
+        //return view('admin.usunauto', compact('data'));
+        //return view ('admin.usunauto', ['data' => $data]);
+
+        $cars = DB::select('select * from cars');
+        return view('home', ['cars' => $cars]);
+    }
 
        /* $marka = $request->input('marka');
         $model = $request->input('model');
@@ -59,5 +82,5 @@ class FrontendController extends Controller
             return redirect()->to('admin.admin');
         */
 
-    }
+    
 }
