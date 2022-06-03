@@ -27,8 +27,8 @@
             </div>
 
             <div class="col-md-5">
-            <form action="{{ url('dodajsamochod') }}" method="get">
-        <button type="submit" class="btn btn-primary">2</button>
+            <form action="{{ url('wyswietluser') }}" method="get">
+        <button type="submit" class="btn btn-primary">Dodaj Uzytkownika</button>
         </form>
             </div>
 
@@ -39,18 +39,18 @@
             </div>
 
             <div class="col-md-5">
-            <form action="{{ url('dodajsamochod') }}" method="get">
-        <button type="submit" class="btn btn-primary">4</button>
+            <form action="{{ url('usunuser') }}" method="get">
+        <button type="submit" class="btn btn-primary">Usun Uzytkownika</button>
         </form>
             </div>
             <div class="col-md-5">
-            <form action="{{ url('dodajsamochod') }}" method="get">
+            <form action="{{ url('wyswietlsamochod') }}" method="get">
         <button type="submit" class="btn btn-primary">Wyswietl samochody</button>
         </form>
             </div>
             <div class="col-md-5">
-            <form action="{{ url('dodajsamochod') }}" method="get">
-        <button type="submit" class="btn btn-primary">6</button>
+            <form action="{{ url('wyswietluser') }}" method="get">
+        <button type="submit" class="btn btn-primary">Wyswietl uzytkownikow</button>
         </form>
             </div>
 

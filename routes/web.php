@@ -29,7 +29,13 @@ Route::get('redirects','App\Http\Controllers\HomeController@index');
 Route::get('dodajsamochod','App\Http\Controllers\HomeController@menudodajsamochod');
 Route::post('/wyslijauto','App\Http\Controllers\FrontendController@insertcar');
 
-Route::get('usunsamochod','App\Http\Controllers\HomeController@menuusunsamochod');
-Route::post('/usunauto','App\Http\Controllers\FrontendController@dropcar');
+Route::get('usunsamochod', [FrontendController::class, 'usunAutoWidok']);
+Route::get('usun/{id}', [FrontendController::class, 'usunAuto']);
+
+
+Route::get('wyswietlsamochod', [FrontendController::class, 'wyswietlAuto']);
+
+Route::get('wyswietluser', [FrontendController::class, 'wyswietluser']);
+//Route::get('usunuser', [FrontendController::class, 'wyswietluser']);
 
 

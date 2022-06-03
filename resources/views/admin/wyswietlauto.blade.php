@@ -2,10 +2,9 @@
 
 @section('content')
 <div class="container">
-
 </div>
 <div class="container">
-    <p class="text-center fs-2">Usun Samochód</p>
+    <p class="text-center fs-2">Samochody w bazie danych:</p>
     
 
             <div style="margin-bottom:50px">
@@ -32,7 +31,7 @@
                     <td>{{ $car ->moc }}</td>
                     <td>{{ $car ->rok }}</td>
                     <td>{{ $car ->cena }}</td>
-                    <td><a href="{{ url('usun/'.$car->id) }}"><button class="btn btn-danger btn-sm delete">X</button></a></td>
+
                 </td>
                 </tr>
                 @endforeach
