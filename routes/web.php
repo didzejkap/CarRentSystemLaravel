@@ -30,12 +30,11 @@ Route::get('dodajsamochod','App\Http\Controllers\HomeController@menudodajsamocho
 Route::post('/wyslijauto','App\Http\Controllers\FrontendController@insertcar');
 
 Route::get('usunsamochod', [FrontendController::class, 'usunAutoWidok']);
-Route::get('usun/{id}', [FrontendController::class, 'usunAuto']);
-
-
+Route::get('usunauto/{id}', [FrontendController::class, 'usunAuto']);
 Route::get('wyswietlsamochod', [FrontendController::class, 'wyswietlAuto']);
 
-Route::get('wyswietluser', [FrontendController::class, 'wyswietluser']);
+Route::get('usunuser', [FrontendController::class, 'usunUserWidok']);
+Route::get('usunuserDelete/{id}', [FrontendController::class, 'usunUserFunction']);
 //Route::get('usunuser', [FrontendController::class, 'wyswietluser']);
 
 

@@ -38,5 +38,14 @@ class FrontendController extends Controller
         $cars = DB::select('select * from cars');
         return view('admin.wyswietlauto', ['cars' => $cars]);
     }
-    
+    public function usunUserWidok()
+    {
+        $users = DB::select('select id,name,email,role from users');
+        return view('admin.usunuser', ['users' => $users]);
+    }
+    public function usunUserFunction($id)
+    {
+        DB::delete('delete from users where id = ?', [$id]);
+        return redirect()->to ('usunuser');
+    }
 }

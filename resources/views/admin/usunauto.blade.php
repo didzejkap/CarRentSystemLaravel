@@ -32,7 +32,7 @@
                     <td>{{ $car ->moc }}</td>
                     <td>{{ $car ->rok }}</td>
                     <td>{{ $car ->cena }}</td>
-                    <td><a href="{{ url('usun/'.$car->id) }}"><button class="btn btn-danger btn-sm delete">X</button></a></td>
+                    <td><a href="{{ url('usunauto/'.$car->id) }}"><button class="btn btn-danger btn-sm delete">X</button></a></td>
                 </td>
                 </tr>
                 @endforeach

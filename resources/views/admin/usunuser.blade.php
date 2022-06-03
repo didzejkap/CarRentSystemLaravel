@@ -4,7 +4,7 @@
 <div class="container">
 </div>
 <div class="container">
-    <p class="text-center fs-2">Usun Samochód</p>
+    <p class="text-center fs-2">Usun użytkownika</p>
     
 
             <div style="margin-bottom:50px">
@@ -25,10 +25,7 @@
                     <td>{{ $user ->name }}</td>
                     <td>{{ $user ->email }}</td>
                     <td>{{ $user ->role }}</td>
-                    <td><button class=" btn btn-danger btn-sm delete" action="'usun/{{ $user->id }}'">
-                        X
-                </button>
-                </td>
+                    <td><a href="{{ url('usunuserDelete/'.$user->id) }}"><button class="btn btn-danger btn-sm delete">X</button></a></td>
                 </tr>
                 @endforeach
                 </tbody>
