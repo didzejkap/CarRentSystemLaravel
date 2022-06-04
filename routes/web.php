@@ -35,6 +35,7 @@ Route::get('wyswietlsamochod', [FrontendController::class, 'wyswietlAuto']);
 
 Route::get('usunuser', [FrontendController::class, 'usunUserWidok']);
 Route::get('usunuserDelete/{id}', [FrontendController::class, 'usunUserFunction']);
-//Route::get('usunuser', [FrontendController::class, 'wyswietluser']);
+Route::get('wyswietluser', [FrontendController::class, 'wyswietlUser']);
+
 
 

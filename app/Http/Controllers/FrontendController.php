@@ -48,4 +48,9 @@ class FrontendController extends Controller
         DB::delete('delete from users where id = ?', [$id]);
         return redirect()->to ('usunuser');
     }
+    public function wyswietlUser()
+    {
+        $users = DB::select('select id,name,email,role from users');
+        return view('admin.wyswietluser', ['users' => $users]);
+    }
 }
