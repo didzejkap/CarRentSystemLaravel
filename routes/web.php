@@ -37,12 +37,12 @@ Route::get('usunuser', [FrontendController::class, 'usunUserWidok']);
 Route::get('usunuserDelete/{id}', [FrontendController::class, 'usunUserFunction']);
 Route::get('wyswietluser', [FrontendController::class, 'wyswietlUser']);
 
-Route::get('zamowwidok', [FrontendController::class, 'zamowWidok']);
-Route::get('zamowauto/{id}', [FrontendController::class, 'zamowAuto']);
-
 Route::get('dodajrole', [FrontendController::class, 'dodajRoleWidok']);
 Route::get('dodajroleadmin/{id}', [FrontendController::class, 'dodajRoleAdmin']);
 Route::get('dodajroleuser/{id}', [FrontendController::class, 'dodajRoleUser']);
+
+Route::get('zamowwidok', [FrontendController::class, 'zamowWidok']);
+Route::post('zamowauto/{id}', [FrontendController::class, 'zamowAuto']);
 
 
 

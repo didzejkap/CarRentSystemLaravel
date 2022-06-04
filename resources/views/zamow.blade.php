@@ -34,9 +34,11 @@
                     <td>{{ $car ->moc }}</td>
                     <td>{{ $car ->rok }}</td>
                     <td>{{ $car ->cena }}</td>
-                    <td><input type="text" class="form-control" name="moc"></td>
-                    <td><input type="text" class="form-control" name="moc"></td>
-                    <td><a href="{{ url('zamowauto/'.$car->id_cars) }}"><button class="btn btn-danger btn-sm delete">Zamow</button></a></td>
+                    <form action="{{ url('zamowauto/'.$car->id_cars) }}" method="post">
+                    <td><input type="text" class="form-control" name="data_start"></td>
+                    <td><input type="text" class="form-control" name="data_koniec"></td>
+                    <td><button type="submit" class="btn btn-danger btn-sm delete">Zamow</button></td>
+                    </form>
                 </td>
                 </tr>
                 @endforeach

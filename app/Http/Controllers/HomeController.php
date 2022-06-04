@@ -42,7 +42,13 @@ class HomeController extends Controller
     }
     public function menudodajsamochod()
     {
+        $role=Auth::user()->role;
+        if($role=='0')
+        {
+            return view('home');
+        }else{
         return view('admin.dodajauto');
     }
+}
 
 }
