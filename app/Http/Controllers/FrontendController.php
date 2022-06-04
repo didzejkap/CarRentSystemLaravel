@@ -28,9 +28,9 @@ class FrontendController extends Controller
         $cars = DB::select('select * from cars');
         return view('admin.usunauto', ['cars' => $cars]);
     }
-    public function usunAuto($id)
+    public function usunAuto($id_cars)
     {
-        DB::delete('delete from cars where id = ?', [$id]);
+        DB::delete('delete from cars where id_cars = ?', [$id_cars]);
         return redirect()->to ('usunsamochod');
     }
     public function wyswietlAuto()

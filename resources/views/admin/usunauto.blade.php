@@ -25,14 +25,14 @@
                 <tbody>
                 @foreach ($cars as $car)
                 <tr>
-                    <td>{{ $car ->id }}</td>
+                    <td>{{ $car ->id_cars }}</td>
                     <td>{{ $car ->marka }}</td>
                     <td>{{ $car ->model }}</td>
                     <td>{{ $car ->paliwo }}</td>
                     <td>{{ $car ->moc }}</td>
                     <td>{{ $car ->rok }}</td>
                     <td>{{ $car ->cena }}</td>
-                    <td><a href="{{ url('usunauto/'.$car->id) }}"><button class="btn btn-danger btn-sm delete">X</button></a></td>
+                    <td><a href="{{ url('usunauto/'.$car->id_cars) }}"><button class="btn btn-danger btn-sm delete">X</button></a></td>
                 </td>
                 </tr>
                 @endforeach
