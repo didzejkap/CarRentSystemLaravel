@@ -53,4 +53,35 @@ class FrontendController extends Controller
         $users = DB::select('select id,name,email,role from users');
         return view('admin.wyswietluser', ['users' => $users]);
     }
+    public function zamowWidok()
+    {
+        $cars = DB::select('select * from cars');
+        return view('zamow', ['cars' => $cars]);
+    }
+    public function zamowauto(Request $request, $id_cars)
+    {
+        Auth::user()->name;
+        
+        $zamowienie->suma = $request->input('marka');
+
+        $cars->save();
+
+
+        return redirect()->to ('zamowwidok');
+    }
+    public function dodajRoleWidok()
+    {
+        $users = DB::select('select id,name,email,role from users');
+        return view('admin.dodajrole', ['users' => $users]);
+    }
+    public function dodajRoleAdmin($id)
+    {
+        DB::update('update users set role = 1 where id = ?', [$id]);
+        return redirect()->to ('dodajrole');
+    }
+    public function dodajRoleUser($id)
+    {
+        DB::update('update users set role = 0 where id = ?', [$id]);
+        return redirect()->to ('dodajrole');
+    }
 }

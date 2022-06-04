@@ -27,8 +27,8 @@
             </div>
 
             <div class="col-md-5">
-            <form action="{{ url('wyswietluser') }}" method="get">
-        <button type="submit" class="btn btn-primary">Dodaj Uzytkownika</button>
+            <form action="{{ url('dodajrole') }}" method="get">
+        <button type="submit" class="btn btn-primary">Role uzytkownikow</button>
         </form>
             </div>
 

@@ -3,11 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Zostałeś zalogowany!</h4>
-            </div>
-        </div>
+    <form action="{{ url('zamowwidok') }}" method="get">
+        <button type="submit" class="btn btn-primary btn-lg">Zamow samochod</button>
+        </form>
     </div>
+    <div style="margin-bottom:50px">
+            </div>
+
 </div>
 @endsection
