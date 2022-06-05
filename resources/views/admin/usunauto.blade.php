@@ -38,6 +38,7 @@
                 @endforeach
                 </tbody>
                 </table>
+                {{$cars->links()}}
 
 
 

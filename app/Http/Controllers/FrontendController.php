@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Car;
+use App\Models\User;
+use Illuminate\Pagination\CursorPaginator;
 
 class FrontendController extends Controller
 {
@@ -40,7 +42,7 @@ class FrontendController extends Controller
             return view('home');
         }else{
 
-        $cars = DB::select('select * from cars');
+        $cars = Car::paginate(5);
         return view('admin.usunauto', ['cars' => $cars]);
     }
 }
@@ -64,7 +66,8 @@ class FrontendController extends Controller
             return view('home');
         }else{
 
-        $cars = DB::select('select * from cars');
+        $cars = Car::paginate(5);
+        //$cars = DB::select('select * from cars')->cursorPaginate(3);
         return view('admin.wyswietlauto', ['cars' => $cars]);
     }
 }
@@ -76,7 +79,8 @@ class FrontendController extends Controller
             return view('home');
         }else{
 
-        $users = DB::select('select id,name,email,role from users');
+        //$users = DB::select('select id,name,email,role from users');
+        $users = User::paginate(5);
         return view('admin.usunuser', ['users' => $users]);
     }
 }
@@ -100,7 +104,7 @@ class FrontendController extends Controller
             return view('home');
         }else{
 
-        $users = DB::select('select id,name,email,role from users');
+        $users = User::paginate(5);
         return view('admin.wyswietluser', ['users' => $users]);
     }
 }
@@ -112,7 +116,7 @@ class FrontendController extends Controller
             return view('home');
         }else{
 
-        $users = DB::select('select id,name,email,role from users');
+        $users = User::paginate(5);
         return view('admin.dodajrole', ['users' => $users]);
     }
 }
@@ -143,7 +147,7 @@ class FrontendController extends Controller
 public function zamowWidok()
 {
 
-    $cars = DB::select('select * from cars');
+    $cars = Car::paginate(8);
     return view('zamow', ['cars' => $cars]);
 
 }
