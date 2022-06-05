@@ -44,5 +44,8 @@ Route::get('dodajroleuser/{id}', [FrontendController::class, 'dodajRoleUser']);
 Route::get('zamowwidok', [FrontendController::class, 'zamowWidok']);
 Route::post('zamowauto/{id}', [FrontendController::class, 'zamowAuto']);
 
+Route::get('wyswietlzamowieniawidok', [FrontendController::class, 'wyswietlZamowieniaWidok']);
+Route::get('usunzamowienie/{id}', [FrontendController::class, 'usunZamowienie']);
+
 
 

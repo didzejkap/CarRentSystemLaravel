@@ -53,6 +53,17 @@
         <button type="submit" class="btn btn-primary">Wyswietl uzytkownikow</button>
         </form>
             </div>
+            <div class="col-md-5">
+            <form action="{{ url('wyswietlzamowieniawidok') }}" method="get">
+        <button type="submit" class="btn btn-warning">Zamowienia</button>
+        </form>
+            </div>
+            <div class="col-md-5">
+            <form action="{{ url('zamowwidok') }}" method="get">
+        <button type="submit" class="btn btn-warning">Dodaj Zamowienie</button>
+        </form>
+            </div>
+
 
 
 

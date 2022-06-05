@@ -174,4 +174,32 @@ public function zamowAuto(Request $request, $id_cars)
     //return (true);
     return redirect()->to ('zamowwidok');
 }
+public function wyswietlZamowieniaWidok()
+{
+    $role=Auth::user()->role;
+    if($role=='0')
+    {
+        return view('home');
+    }else{
+
+    $zamowienia = DB::table('zamowienie')
+        ->select('id_zamowienie','suma','id','id_cars','data_start','data_koniec')
+        ->get();
+
+
+    return view('admin.wyswietlzamowienia', ['zamowienia' => $zamowienia]);
+    }
+}
+public function usunZamowienie($id)
+{
+    $role=Auth::user()->role;
+    if($role=='0')
+    {
+        return view('home');
+    }else{
+
+    DB::delete('delete from zamowienie where id_zamowienie = ?', [$id]);
+    return redirect()->to ('wyswietlzamowieniawidok');
+}
+}
 }
