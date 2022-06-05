@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div style="margin-bottom:50px">
+
             </div>
             <table class="table table-hover">
                 <thead>
@@ -28,6 +29,7 @@
                     <td>{{ $car ->rok }}</td>
                     <td>{{ $car ->cena }}</td>
                     <form action="{{ url('zamowauto/'.$car->id_cars) }}" method="post">
+                    {{ csrf_field() }}
                     <td><input type="text" class="form-control" name="data_start"></td>
                     <td><input type="text" class="form-control" name="data_koniec"></td>
                     <td><button type="submit" class="btn btn-danger btn-sm delete">Zamow</button></td>

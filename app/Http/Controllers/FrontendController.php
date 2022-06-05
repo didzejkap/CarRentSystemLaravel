@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Car;
 use App\Models\User;
 use Illuminate\Pagination\CursorPaginator;
+use Carbon\Carbon;
 
 class FrontendController extends Controller
 {
@@ -153,19 +154,24 @@ public function zamowWidok()
 }
 public function zamowAuto(Request $request, $id_cars)
 {
-    /*Auth::user()->name;
+    $id=Auth::user()->id;
 
-    $now = $data_start;
-    $your_date = $data_koniec;
-    $datediff = $now - $your_date;
+    $data_start = $request->input('data_start');
+    $data_koniec = $request->input('data_koniec');
 
-    echo round($datediff / (60 * 60 * 24));*/
-    
-    //$zamowienie->suma = $request->input('marka');
+    $jeden = Carbon::create($data_start);
+    $dwa = Carbon::create($data_koniec);
+    $jeden->diffInDays($dwa);
 
-    //$cars->save();
+    DB::table('zamowienie')->insert([
+        'suma' => '10',
+        'id' => $id,
+        'id_cars' => $id_cars,
+        'data_start' => $data_start,
+        'data_koniec' => $data_koniec
+    ]);
 
-
+    //return (true);
     return redirect()->to ('zamowwidok');
 }
 }
