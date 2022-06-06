@@ -13,9 +13,8 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <td>ID_Zamowienia</td>
-                    <td>ID_Uzytkownika</td>
-                    <td>ID_Samochodu</td>
+                    <td>Numer Zamówienia</td>
+                    <td>Numer samochodu</td>
                     <td>Suma do zaplaty</td>
                     <td>Data początkowa</td>
                     <td>Data końcowa</td>
@@ -25,7 +24,6 @@
                 @foreach ($zamowienia as $zamowienie)
                 <tr>
                     <td>{{ $zamowienie ->id_zamowienie }}</td>
-                    <td>{{ $zamowienie ->id }}</td>
                     <td>{{ $zamowienie ->id_cars }}</td>
                     <td>{{ $zamowienie ->suma }}</td>
                     <td>{{ $zamowienie ->data_start }}</td>

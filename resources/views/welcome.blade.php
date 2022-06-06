@@ -55,8 +55,7 @@
             Wynajmij samochód już teraz!
         </div>
         <div class="zawartosc2">Posiadamy flote samochodów premium spełniające oczekiwania każdego klienta</div>
-        <div class="col-md-12 text-center"><button type="button" class="btn btn-outline-danger btn-lg">Zobacz</button>
-        </div>
+
     </div>
 
     <div class="samochody-div">
@@ -70,7 +69,7 @@
                     <p>Paliwo: Benzyna</p>
                     <p>Ilość miejsc: 5</p>
                     <p>Cena za 7 dni: 400 PLN</p>
-                    <button type="button" class="btn btn-danger">Wynajmij</button>
+
                 </div>
                 <!-- End Single Feature -->
             </div>
@@ -82,7 +81,7 @@
                     <p>Paliwo: Benzyna</p>
                     <p>Ilość miejsc: 5</p>
                     <p>Cena za 7 dni: 600 PLN</p>
-                    <button type="button" class="btn btn-danger">Wynajmij</button>
+
                 </div>
                 <!-- End Single Feature -->
             </div>
@@ -94,7 +93,7 @@
                     <p>Paliwo: Benzyna</p>
                     <p>Ilość miejsc: 5</p>
                     <p>Cena za 7 dni: 500 PLN</p>
-                    <button type="button" class="btn btn-danger">Wynajmij</button>
+
                 </div>
                 <!-- End Single Feature -->
             </div>

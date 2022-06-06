@@ -215,20 +215,21 @@ public function usunZamowienie($id)
 public function sprawdzRezerwacje(Request $request, $id_cars){
 
     $id=Auth::user()->id;
-    $Data_wypozyczenia = $request->input('data_start');
-    $Data_zwrotu = $request->input('data_koniec');
+    $wyp = $request->input('data_start');
+    $zwrot = $request->input('data_koniec');
 
-    $Data_wypozyczeniaa=$Data_wypozyczenia;
-    $Data_zwrotu1=date('Y-m-d', strtotime("+1 day", strtotime(str_replace('/', '-', $Data_zwrotu))));
-    str_replace('/', '-', $Data_wypozyczeniaa);
+    $wypozyczenie=$wyp;
+    $zwr=date('Y-m-d', strtotime("+1 day", strtotime(str_replace('/', '-', $zwrot))));
+    $x = rand(140, 400);
+    str_replace('/', '-', $wypozyczenie);
     $date=DB::table('zamowienie')->where('id_cars', $id_cars)->get();
 
     foreach($date as $dates){ 
-        while($Data_wypozyczeniaa !== $Data_zwrotu1){ 
-            if(($Data_wypozyczeniaa >= str_replace('/', '-', $dates->data_start))&&($Data_wypozyczeniaa <= str_replace('/', '-', $dates->data_koniec))){
+        while($wypozyczenie !== $zwr){ 
+            if(($wypozyczenie >= str_replace('/', '-', $dates->data_start))&&($wypozyczenie <= str_replace('/', '-', $dates->data_koniec))){
                 return redirect()->to ('zamowwidok')->with('zajety', 'Nie możesz zarezerwować samochodu w te dni!');
             }
-            $Data_wypozyczeniaa=date('Y-m-d', strtotime("+1 day", strtotime($Data_wypozyczeniaa)));
+            $wypozyczenie=date('Y-m-d', strtotime("+1 day", strtotime($wypozyczenie)));
         }
     }
         $cena = DB::table('cars')
@@ -237,15 +238,16 @@ public function sprawdzRezerwacje(Request $request, $id_cars){
         ->get();
     
         $days = array();
-        $datawypo = Carbon::create($Data_wypozyczenia);
-        $dawazwr = Carbon::create($Data_zwrotu);
+        $datawypo = Carbon::create($wyp);
+        $dawazwr = Carbon::create($zwrot);
     
         //$from = Carbon::parse($cleanStart);
         //$to = Carbon::parse($cleanFinish);
         $roznica = $datawypo->diffInDays($dawazwr);
+        
      
         DB::table('zamowienie')->insert([
-            'suma' => "99",
+            'suma' => $x,
             'id' => $id,
             'id_cars' => $id_cars,
             'data_start' => $datawypo,
