@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Pagination\CursorPaginator;
 use Carbon\Carbon;
 
+
 class FrontendController extends Controller
 {
 
@@ -159,12 +160,21 @@ public function zamowAuto(Request $request, $id_cars)
     $data_start = $request->input('data_start');
     $data_koniec = $request->input('data_koniec');
 
+    $cena = DB::table('cars')
+    ->select('cena')
+    ->where('id_cars', $id_cars)
+    ->get();
+
     $jeden = Carbon::create($data_start);
     $dwa = Carbon::create($data_koniec);
-    $jeden->diffInDays($dwa);
+
+    //$from = Carbon::parse($cleanStart);
+    //$to = Carbon::parse($cleanFinish);
+    /*(int)*/$jeden->diffInDays($dwa);
+    //$do_zaplaty = $cena * $jeden->diffInDays($dwa);
 
     DB::table('zamowienie')->insert([
-        'suma' => '10',
+        'suma' => $jeden->diffInDays($dwa),
         'id' => $id,
         'id_cars' => $id_cars,
         'data_start' => $data_start,
@@ -202,4 +212,74 @@ public function usunZamowienie($id)
     return redirect()->to ('wyswietlzamowieniawidok');
 }
 }
+public function sprawdzRezerwacje(Request $request, $id_cars){
+
+    $id=Auth::user()->id;
+    $Data_wypozyczenia = $request->input('data_start');
+    $Data_zwrotu = $request->input('data_koniec');
+
+    $Data_wypozyczeniaa=$Data_wypozyczenia;
+    $Data_zwrotu1=date('Y-m-d', strtotime("+1 day", strtotime(str_replace('/', '-', $Data_zwrotu))));
+    str_replace('/', '-', $Data_wypozyczeniaa);
+    $date=DB::table('zamowienie')->where('id_cars', $id_cars)->get();
+
+    foreach($date as $dates){ 
+        while($Data_wypozyczeniaa !== $Data_zwrotu1){ 
+            if(($Data_wypozyczeniaa >= str_replace('/', '-', $dates->data_start))&&($Data_wypozyczeniaa <= str_replace('/', '-', $dates->data_koniec))){
+                return redirect()->to ('zamowwidok')->with('zajety', 'Nie możesz zarezerwować samochodu w te dni!');
+            }
+            $Data_wypozyczeniaa=date('Y-m-d', strtotime("+1 day", strtotime($Data_wypozyczeniaa)));
+        }
+    }
+        $cena = DB::table('cars')
+        ->select('cena')
+        ->where('id_cars', $id_cars)
+        ->get();
+    
+        $days = array();
+        $datawypo = Carbon::create($Data_wypozyczenia);
+        $dawazwr = Carbon::create($Data_zwrotu);
+    
+        //$from = Carbon::parse($cleanStart);
+        //$to = Carbon::parse($cleanFinish);
+        $roznica = $datawypo->diffInDays($dawazwr);
+     
+        DB::table('zamowienie')->insert([
+            'suma' => "99",
+            'id' => $id,
+            'id_cars' => $id_cars,
+            'data_start' => $datawypo,
+            'data_koniec' => $dawazwr
+        ]);
+    
+        //return (true);
+        //return redirect()->to ('zamowwidok')->with('success', 'Zamówiłeś samochód! Przejdz do "Zamówienia" aby zobaczyć swoje zamówione samochody');
+        return redirect()->back()->with(['message' => 'Zamówiłeś samochód! Przejdz do ']);
+    
 }
+public function wyswietlZamowieniaWidokUser()
+{
+    $id=Auth::user()->id;
+    $zamowienia = DB::table('zamowienie')
+        ->select('id_zamowienie','suma','id','id_cars','data_start','data_koniec')
+        ->where('id', $id)
+        ->get();
+
+
+    //$cars = DB::table('cars')->select('id_zamowienie','suma','id','id_cars','data_start','data_koniec')->where('id', $id)
+    //->get();
+
+
+    return view('wyswietlzamowieniauser', ['zamowienia' => $zamowienia]);
+    
+}
+public function usunZamowienieUser($id_zamowienie)
+{
+    
+    DB::delete('delete from zamowienie where id_zamowienie = ?', [$id_zamowienie]);
+    return redirect()->to ('wyswietlzamowieniawidokuser');
+
+}
+ 
+}
+

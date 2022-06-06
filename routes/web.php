@@ -42,10 +42,15 @@ Route::get('dodajroleadmin/{id}', [FrontendController::class, 'dodajRoleAdmin'])
 Route::get('dodajroleuser/{id}', [FrontendController::class, 'dodajRoleUser']);
 
 Route::get('zamowwidok', [FrontendController::class, 'zamowWidok']);
-Route::post('zamowauto/{id}', [FrontendController::class, 'zamowAuto']);
+//Route::post('zamowauto/{id}', [FrontendController::class, 'zamowAuto']);
+Route::post('sprawdzrezerwacje/{id}', [FrontendController::class, 'sprawdzRezerwacje']);
+
 
 Route::get('wyswietlzamowieniawidok', [FrontendController::class, 'wyswietlZamowieniaWidok']);
 Route::get('usunzamowienie/{id}', [FrontendController::class, 'usunZamowienie']);
+
+Route::get('wyswietlzamowieniawidokuser', [FrontendController::class, 'wyswietlZamowieniaWidokUser']);
+Route::get('usunzamowienieuser/{id}', [FrontendController::class, 'usunZamowienieUser']);
 
 
 

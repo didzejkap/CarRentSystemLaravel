@@ -2,9 +2,16 @@
 
 @section('content')
 <div class="container">
-    <div style="margin-bottom:50px">
-
-            </div>
+@if(session()->has('message'))
+    <div class="alert alert-success">
+    {{ session('message') }} <a href="{{ url('wyswietlzamowieniawidokuser') }}" class="alert-link">Zamówienia</a> aby zobaczyć swoje zamówione samochody
+    </div>
+ @endif
+ @if(session()->has('zajety'))
+    <div class="alert alert-danger">
+        {{ session('zajety') }}
+    </div>
+ @endif
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -28,10 +35,10 @@
                     <td>{{ $car ->moc }}</td>
                     <td>{{ $car ->rok }}</td>
                     <td>{{ $car ->cena }}</td>
-                    <form action="{{ url('zamowauto/'.$car->id_cars) }}" method="post">
+                    <form action="{{ url('sprawdzrezerwacje/'.$car->id_cars) }}" method="post">
                     {{ csrf_field() }}
-                    <td><input type="text" class="form-control" name="data_start"></td>
-                    <td><input type="text" class="form-control" name="data_koniec"></td>
+                    <td><input type="date" class="form-control" name="data_start"></td>
+                    <td><input type="date" class="form-control" name="data_koniec"></td>
                     <td><button type="submit" class="btn btn-danger btn-sm delete">Zamow</button></td>
                     </form>
                 </td>

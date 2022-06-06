@@ -40,9 +40,6 @@
         <a class="nav-link" href="{{ url('/') }}">Wróć do strony głównej</a>
       </li>
         </ul>
-
-
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
